@@ -50,7 +50,7 @@ jobs:
 
               gcloud run deploy cicd-5 \
                --image $IMAGE_TAG \
-               --region us-central
+               --region us-central1 \
 
 
           
