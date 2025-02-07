@@ -30,6 +30,9 @@ jobs:
           # Configure Docker authentication for interacting with Artifact Registry, allowing you to push or pull Docker images securely.
           # Build the docker image and push top artifact registry.
           - name: Build and Push Docker Image 🐳
+            uses: subosito/flutter-action@v2
+            with:
+              channel: 'stable'
             run: |
               IMAGE_TAG=europe-west3-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REGISTRY }}/game3333:v$VERSION
               gcloud auth configure-docker --quiet
