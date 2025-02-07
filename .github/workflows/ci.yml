@@ -19,3 +19,19 @@ jobs:
             uses: subosito/flutter-action@v2
             with:
               channel: 'stable'
+
+          - name: "Flutter deps"
+            run: flutter pub get
+
+          - name: "Build web"
+            run: flutter build web
+
+          - name: "Formatting"
+            run: dart format --output=none --set-exit-if-changed .
+
+          - name: "Lint"
+            run: flutter analyze
+
+          - name: "Test"
+            run: flutter test
+
